@@ -46,14 +46,14 @@ function playRound(hChoice, cChoice) {
 
     if(computerChoice === "Scissors") {
       humanScore += 1;
-      console.log(`You Win! You chose ${humanChoice} beats computer chose ${computerChoice}`)
+      console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
     } 
     else if (computerChoice === "Rock") {
       console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
     }
     else {
       computerScore += 1;
-      console.log(`You Lose! Computer chose ${computerChoice} beats you chose ${humanChoice}`)
+      console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
     }
 
   } 
@@ -62,14 +62,14 @@ function playRound(hChoice, cChoice) {
 
     if(computerChoice === "Rock") {
       humanScore += 1;
-      console.log(`You Win! You chose ${humanChoice} beats computer chose ${computerChoice}`)
+      console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
     } 
     else if (computerChoice === "Paper") {
       console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
     }
     else {
       computerScore += 1;
-      console.log(`You Lose! Computer chose ${computerChoice} beats you chose ${humanChoice}`)
+      console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
     }
 
   }
@@ -79,14 +79,14 @@ function playRound(hChoice, cChoice) {
 
     if(computerChoice === "Paper") {
       humanScore += 1;
-      console.log(`You Win! You chose ${humanChoice} beats computer chose ${computerChoice}`)
+      console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
     } 
     else if (computerChoice === "Scissors") {
       console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
     }
     else {
       computerScore += 1;
-      console.log(`You Lose! Computer chose ${computerChoice} beats you chose ${humanChoice}`)
+      console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
     }
 
   }
