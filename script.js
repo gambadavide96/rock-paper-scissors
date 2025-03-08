@@ -3,17 +3,26 @@
 function getComputerChoice() {
 
   //Return 0 , 1 or 2
-  numChoice = Math.floor(Math.random() * 3)
+  choiceNumber = Math.floor(Math.random() * 3);
+  let result;
 
-  if (numChoice === 0) {
-    return "Rock"
-  } else if(numChoice === 1) {
-    return "Paper"
-  } else {
-    return "Scissors"
+  switch (choiceNumber) {
+    case 0:
+      result = "Rock"
+      break;
+    case 1:
+      result = "Paper"
+      break;
+    case 2:
+      result = "Scissors"
   }
-  
+  return computerChoice
 }
 
-test = getComputerChoice()
-console.log(test)
+function getHumanChoice() {
+  humanChoice = prompt("Insert 'Rock', 'Paper' or 'Scissors'.");
+  return humanChoice;
+}
+
+
+
