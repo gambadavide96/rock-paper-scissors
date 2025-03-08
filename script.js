@@ -4,25 +4,27 @@ function getComputerChoice() {
 
   //Return 0 , 1 or 2
   choiceNumber = Math.floor(Math.random() * 3);
-  let result;
+  let computerChoice;
 
   switch (choiceNumber) {
     case 0:
-      result = "Rock"
+      computerChoice = "Rock"
       break;
     case 1:
-      result = "Paper"
+      computerChoice = "Paper"
       break;
     case 2:
-      result = "Scissors"
+      computerChoice = "Scissors"
   }
   return computerChoice
 }
 
 function getHumanChoice() {
-  humanChoice = prompt("Insert 'Rock', 'Paper' or 'Scissors'.");
+  const humanChoice = prompt("Insert 'Rock', 'Paper' or 'Scissors'.");
   return humanChoice;
 }
 
 
+let humanScore = 0;
+let computerScore = 0
 
