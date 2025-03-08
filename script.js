@@ -1,4 +1,7 @@
 
+let humanScore = 0;
+let computerScore = 0
+
 
 function getComputerChoice() {
 
@@ -24,7 +27,31 @@ function getHumanChoice() {
   return humanChoice;
 }
 
+function playRound(humanChoice, computerChoice) {
 
-let humanScore = 0;
-let computerScore = 0
+  const humanChoice = humanChoice.toLowerCase()
+  const computerChoice = computerChoice.toLowerCase()
+
+  if (humanChoice === "rock") {
+
+    if(computerChoice === "paper") {
+      humanScore += 1;
+      console.log(`You Win! ${humanChoice} beats ${computerChoice}`)
+    } 
+    else if (computerChoice === "paper") {
+      //Pareggio
+    }
+
+  } 
+
+  else if (humanChoice === "paper") {
+
+  }
+
+  //humanChoice is scissors
+  else {
+
+  }
+
+}
 
