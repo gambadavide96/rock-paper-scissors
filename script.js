@@ -2,11 +2,21 @@
 let humanScore = 0;
 let computerScore = 0
 
+function capitalize(str) {
+
+  let UpperFirstLetter = str.charAt(0).toUpperCase()
+
+  let subString = str.substring(1)
+  subString = subString.toLowerCase()
+
+  return UpperFirstLetter.concat(subString)
+}
+
 
 function getComputerChoice() {
 
   //Return 0 , 1 or 2
-  choiceNumber = Math.floor(Math.random() * 3);
+  let choiceNumber = Math.floor(Math.random() * 3);
   let computerChoice;
 
   switch (choiceNumber) {
@@ -27,31 +37,68 @@ function getHumanChoice() {
   return humanChoice;
 }
 
-function playRound(humanChoice, computerChoice) {
+function playRound(hChoice, cChoice) {
 
-  const humanChoice = humanChoice.toLowerCase()
-  const computerChoice = computerChoice.toLowerCase()
+  const humanChoice = capitalize(hChoice)
+  const computerChoice = capitalize(cChoice)
 
-  if (humanChoice === "rock") {
+  if (humanChoice === "Rock") {
 
-    if(computerChoice === "paper") {
+    if(computerChoice === "Scissors") {
       humanScore += 1;
-      console.log(`You Win! ${humanChoice} beats ${computerChoice}`)
+      console.log(`You Win! You chose ${humanChoice} beats computer chose ${computerChoice}`)
     } 
-    else if (computerChoice === "paper") {
-      //Pareggio
+    else if (computerChoice === "Rock") {
+      console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
+    }
+    else {
+      computerScore += 1;
+      console.log(`You Lose! Computer chose ${computerChoice} beats you chose ${humanChoice}`)
     }
 
   } 
 
-  else if (humanChoice === "paper") {
+  else if (humanChoice === "Paper") {
+
+    if(computerChoice === "Rock") {
+      humanScore += 1;
+      console.log(`You Win! You chose ${humanChoice} beats computer chose ${computerChoice}`)
+    } 
+    else if (computerChoice === "Paper") {
+      console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
+    }
+    else {
+      computerScore += 1;
+      console.log(`You Lose! Computer chose ${computerChoice} beats you chose ${humanChoice}`)
+    }
 
   }
 
-  //humanChoice is scissors
+  //humanChoice is Scissors
   else {
+
+    if(computerChoice === "Paper") {
+      humanScore += 1;
+      console.log(`You Win! You chose ${humanChoice} beats computer chose ${computerChoice}`)
+    } 
+    else if (computerChoice === "Scissors") {
+      console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
+    }
+    else {
+      computerScore += 1;
+      console.log(`You Lose! Computer chose ${computerChoice} beats you chose ${humanChoice}`)
+    }
 
   }
 
 }
+
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+console.log(humanScore)
+console.log(computerScore)
 
