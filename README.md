@@ -9,8 +9,7 @@ This is a simple **Rock Paper Scissors** game built as part of *The Odin Project
 ## Features ✨
 - Play against the computer 🤖
 - Randomized computer choices 🎲
-- Score tracking 📊
-- Interactive UI with buttons 🖱️ (optional)
+- Score tracking 📊 
 
 ## Technologies Used 🛠️
 - JavaScript (ES6+)
@@ -19,7 +18,7 @@ This is a simple **Rock Paper Scissors** game built as part of *The Odin Project
 ## Future Improvements 🚀
 - Add animations and sounds 🎵
 - Implement multiplayer mode 👥
-- Improve UI design for better user experience 🎨
+- Interactive UI with buttons 🖱️ 
 
 ## Acknowledgements
 A huge thank you to the team at The Odin Project for providing such an amazing curriculum and resources.
