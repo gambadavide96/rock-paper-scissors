@@ -82,23 +82,26 @@ function playGame() {
   
       if(computerChoice === "Paper") {
         humanScore += 1;
-        console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
+        console.log(`You Win! You chose Scissors and computer chose ${computerChoice}`)
       } 
       else if (computerChoice === "Scissors") {
-        console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
+        console.log(`A tie! You chose Scissors and the computer chose ${computerChoice}`)
       }
       else {
         computerScore += 1;
-        console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
+        console.log(`You Lose! Computer chose ${computerChoice} and you chose Scissors`)
       }
   
     }
   
   }
 
-  for(let i = 1; i <= 5; i++) {
+  // We start with only one round, we will add five rounds later  
+  /* for(let i = 1; i <= 5; i++) {
     playRound(getHumanChoice(),getComputerChoice())
-  }
+  }*/
+
+  playRound(getHumanChoice(),getComputerChoice())
 
   if(humanScore > computerScore) {
     console.log(`You won the game! You scored ${humanScore} and computer scored ${computerScore}`)
