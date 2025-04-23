@@ -1,16 +1,5 @@
 
 
-function capitalize(str) {
-
-  let UpperFirstLetter = str.charAt(0).toUpperCase()
-
-  let subString = str.substring(1)
-  subString = subString.toLowerCase()
-
-  return UpperFirstLetter.concat(subString)
-}
-
-
 function getComputerChoice() {
 
   //Return 0 , 1 or 2
@@ -30,92 +19,105 @@ function getComputerChoice() {
   return computerChoice
 }
 
-function getHumanChoice() {
-  const humanChoice = prompt("Insert 'Rock', 'Paper' or 'Scissors'.");
-  return humanChoice;
+function resetGame() {
+  humanScore = 0;
+  computerScore = 0;
 }
+
+
+let humanScore = 0;
+let computerScore = 0
 
 const btnRock = document.querySelector('#btn-rock')
 const btnPaper = document.querySelector('#btn-paper')
 const btnScissors = document.querySelector('#btn-scissors')
 
-function playGame() {
+btnRock.addEventListener("click", () => {
+  playRound('Rock', getComputerChoice());
+});
 
-  let humanScore = 0;
-  let computerScore = 0
+btnPaper.addEventListener("click", () => {
+  playRound('Paper', getComputerChoice());
+});
 
-  function playRound(hChoice, cChoice) {
+btnScissors.addEventListener("click", () => {
+  playRound('Scissors', getComputerChoice());
+});
 
-    const humanChoice = capitalize(hChoice)
-    const computerChoice = capitalize(cChoice)
-  
-    if (humanChoice === "Rock") {
-  
-      if(computerChoice === "Scissors") {
-        humanScore += 1;
-        console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
-      } 
-      else if (computerChoice === "Rock") {
-        console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
-      }
-      else {
-        computerScore += 1;
-        console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
-      }
-  
+
+function playRound(hChoice, cChoice) {
+
+  const humanChoice = hChoice
+  const computerChoice = cChoice
+
+  if (humanChoice === "Rock") {
+
+    if(computerChoice === "Scissors") {
+      humanScore += 1;
+      console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
     } 
-  
-    else if (humanChoice === "Paper") {
-  
-      if(computerChoice === "Rock") {
-        humanScore += 1;
-        console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
-      } 
-      else if (computerChoice === "Paper") {
-        console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
-      }
-      else {
-        computerScore += 1;
-        console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
-      }
-  
+    else if (computerChoice === "Rock") {
+      console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
     }
-  
-    //humanChoice is Scissors
     else {
-  
-      if(computerChoice === "Paper") {
-        humanScore += 1;
-        console.log(`You Win! You chose Scissors and computer chose ${computerChoice}`)
-      } 
-      else if (computerChoice === "Scissors") {
-        console.log(`A tie! You chose Scissors and the computer chose ${computerChoice}`)
-      }
-      else {
-        computerScore += 1;
-        console.log(`You Lose! Computer chose ${computerChoice} and you chose Scissors`)
-      }
-  
+      computerScore += 1;
+      console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
     }
-  
+
+  } 
+
+  else if (humanChoice === "Paper") {
+
+    if(computerChoice === "Rock") {
+      humanScore += 1;
+      console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
+    } 
+    else if (computerChoice === "Paper") {
+      console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
+    }
+    else {
+      computerScore += 1;
+      console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
+    }
+
   }
 
-  playRound(getHumanChoice(),getComputerChoice())
-
-  if(humanScore > computerScore) {
-    console.log(`You won the game! You scored ${humanScore} and computer scored ${computerScore}`)
-  }
-  else if(computerScore > humanScore) {
-    console.log(`You lost the game! You scored ${humanScore} and computer scored ${computerScore}`)
-  }
+  //humanChoice is Scissors
   else {
-    console.log(`A Tie game! You scored ${humanScore} and computer scored ${computerScore}`)
+
+    if(computerChoice === "Paper") {
+      humanScore += 1;
+      console.log(`You Win! You chose Scissors and computer chose ${computerChoice}`)
+    } 
+    else if (computerChoice === "Scissors") {
+      console.log(`A tie! You chose Scissors and the computer chose ${computerChoice}`)
+    }
+    else {
+      computerScore += 1;
+      console.log(`You Lose! Computer chose ${computerChoice} and you chose Scissors`)
+    }
+
   }
 
+  //Checking results:
+  console.log(`User Score: ${humanScore}`);
+  console.log(`Computer Score: ${computerScore}`);
+
+  //Declaring a winner and reset the game
+  if(humanScore >= 5 || computerScore >= 5) {
+
+    if(humanScore > computerScore) {
+      console.log(`You won the game! You scored ${humanScore} and computer scored ${computerScore}`)
+    }
+    else {
+      console.log(`You lost the game! You scored ${humanScore} and computer scored ${computerScore}`)
+    }
+
+    resetGame();
+  }
 
 }
 
 
-playGame()
 
 
