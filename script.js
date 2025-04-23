@@ -35,6 +35,10 @@ function getHumanChoice() {
   return humanChoice;
 }
 
+const btnRock = document.querySelector('#btn-rock')
+const btnPaper = document.querySelector('#btn-paper')
+const btnScissors = document.querySelector('#btn-scissors')
+
 function playGame() {
 
   let humanScore = 0;
@@ -95,11 +99,6 @@ function playGame() {
     }
   
   }
-
-  // We start with only one round, we will add five rounds later  
-  /* for(let i = 1; i <= 5; i++) {
-    playRound(getHumanChoice(),getComputerChoice())
-  }*/
 
   playRound(getHumanChoice(),getComputerChoice())
 
