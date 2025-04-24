@@ -32,6 +32,11 @@ const btnRock = document.querySelector('#btn-rock')
 const btnPaper = document.querySelector('#btn-paper')
 const btnScissors = document.querySelector('#btn-scissors')
 
+const roundWinner = document.querySelector('#round-winner')
+const partialHumanScore = document.querySelector('#partial-human-score')
+const partialComputerScore = document.querySelector('#partial-computer-score')
+const gameWinner = document.querySelector('#game-winner')
+
 btnRock.addEventListener("click", () => {
   playRound('Rock', getComputerChoice());
 });
@@ -47,6 +52,8 @@ btnScissors.addEventListener("click", () => {
 
 function playRound(hChoice, cChoice) {
 
+  gameWinner.textContent = ''
+
   const humanChoice = hChoice
   const computerChoice = cChoice
 
@@ -54,14 +61,14 @@ function playRound(hChoice, cChoice) {
 
     if(computerChoice === "Scissors") {
       humanScore += 1;
-      console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
+      roundWinner.textContent = `You Win! You chose ${humanChoice} and computer chose ${computerChoice}`
     } 
     else if (computerChoice === "Rock") {
-      console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
+      roundWinner.textContent = `A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`
     }
     else {
       computerScore += 1;
-      console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
+      roundWinner.textContent = `You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`
     }
 
   } 
@@ -70,14 +77,14 @@ function playRound(hChoice, cChoice) {
 
     if(computerChoice === "Rock") {
       humanScore += 1;
-      console.log(`You Win! You chose ${humanChoice} and computer chose ${computerChoice}`)
+      roundWinner.textContent = `You Win! You chose ${humanChoice} and computer chose ${computerChoice}`
     } 
     else if (computerChoice === "Paper") {
-      console.log(`A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`)
+      roundWinner.textContent = `A tie! You chose ${humanChoice} and the computer chose ${computerChoice}`
     }
     else {
       computerScore += 1;
-      console.log(`You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`)
+      roundWinner.textContent = `You Lose! Computer chose ${computerChoice} and you chose ${humanChoice}`
     }
 
   }
@@ -87,30 +94,30 @@ function playRound(hChoice, cChoice) {
 
     if(computerChoice === "Paper") {
       humanScore += 1;
-      console.log(`You Win! You chose Scissors and computer chose ${computerChoice}`)
+      roundWinner.textContent = `You Win! You chose Scissors and computer chose ${computerChoice}`
     } 
     else if (computerChoice === "Scissors") {
-      console.log(`A tie! You chose Scissors and the computer chose ${computerChoice}`)
+      roundWinner.textContent = `A tie! You chose Scissors and the computer chose ${computerChoice}`
     }
     else {
       computerScore += 1;
-      console.log(`You Lose! Computer chose ${computerChoice} and you chose Scissors`)
+      roundWinner.textContent = `You Lose! Computer chose ${computerChoice} and you chose Scissors`
     }
 
   }
 
   //Checking results:
-  console.log(`User Score: ${humanScore}`);
-  console.log(`Computer Score: ${computerScore}`);
+  partialHumanScore.textContent = `User Score: ${humanScore}`;
+  partialComputerScore.textContent  = `Computer Score: ${computerScore}`;
 
   //Declaring a winner and reset the game
   if(humanScore >= 5 || computerScore >= 5) {
 
     if(humanScore > computerScore) {
-      console.log(`You won the game! You scored ${humanScore} and computer scored ${computerScore}`)
+      gameWinner.textContent = `You won the game! You scored ${humanScore} and computer scored ${computerScore}`
     }
     else {
-      console.log(`You lost the game! You scored ${humanScore} and computer scored ${computerScore}`)
+      gameWinner.textContent = `You lost the game! You scored ${humanScore} and computer scored ${computerScore}`
     }
 
     resetGame();
