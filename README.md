@@ -5,6 +5,7 @@ This is a simple **Rock Paper Scissors** game built as part of *The Odin Project
 - Functions and conditionals
 - User input and output
 - Loops and event handling
+- Interactive UI with buttons 🖱️ 
 
 ## Features ✨
 - Play against the computer 🤖
@@ -14,11 +15,7 @@ This is a simple **Rock Paper Scissors** game built as part of *The Odin Project
 ## Technologies Used 🛠️
 - JavaScript (ES6+)
 - HTML
-
-## Future Improvements 🚀
-- Add animations and sounds 🎵
-- Implement multiplayer mode 👥
-- Interactive UI with buttons 🖱️ 
+- CSS
 
 ## Acknowledgements
 A huge thank you to the team at The Odin Project for providing such an amazing curriculum and resources.

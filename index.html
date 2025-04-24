@@ -3,21 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="" href="">
+  <link rel="stylesheet" href="style.css">
   <title>Rock Paper Scissor</title>
 </head>
 <body>
-  <h1>Rock Paper Scissors</h1>
 
-  <button id="btn-rock">Rock</button>
-  <button id="btn-paper">Paper</button>
-  <button id="btn-scissors">Scissors</button>
+  <div class="header">
+    <h1>Rock Paper Scissors</h1>
+  </div>
 
-  <h2>Results:</h2>
-  <div id="round-winner"></div>
-  <div id="partial-human-score"></div>
-  <div id="partial-computer-score"></div>
-  <div id ="game-winner"></div>
+  <div class="content">
+
+    <div class="button-container">
+      <button id="btn-rock">Rock</button>
+      <button id="btn-paper">Paper</button>
+      <button id="btn-scissors">Scissors</button>
+    </div>
+  
+    <div class="results">
+      <div id="round-winner"></div>
+      <div id="partial-human-score"></div>
+      <div id="partial-computer-score"></div>
+      <div id ="game-winner"></div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span>Dav96</span>
+    <span>The Odin Project</span>
+  </div>
 
   <script src="script.js"></script>
 </body>

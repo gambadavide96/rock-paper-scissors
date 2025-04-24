@@ -26,7 +26,7 @@ function resetGame() {
 
 
 let humanScore = 0;
-let computerScore = 0
+let computerScore = 0;
 
 const btnRock = document.querySelector('#btn-rock')
 const btnPaper = document.querySelector('#btn-paper')
